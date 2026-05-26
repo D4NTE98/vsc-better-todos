@@ -1,0 +1,49 @@
+{
+  "name": "better-todos",
+  "displayName": "Better Todos & Comments",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other", "Programming Languages"],
+  "keywords": ["todo", "comments", "better comments", "task", "polish"],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "better-todos.addTodo",
+        "title": "Dodaj TODO"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "better-todos",
+          "title": "Better Todos",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "better-todos": [
+        {
+          "id": "betterTodosView",
+          "name": "Lista TODO"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
